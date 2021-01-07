@@ -1,13 +1,14 @@
 import './App.css'
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
-import Login from './Login.js'
-import Register from './Register.js'
-import { Home } from './Home'
-import { Account } from './Account'
-import { Logout } from './Logout'
-import { UserLogOutView } from './UserLogOutView'
-import { UserLoginView } from './UserLoginView'
+import Login from './Components/Login.js'
+import Register from './Components/Register.js'
+import { Home } from './Components/Home'
+import { Account } from './Components/Account'
+import { Logout } from './Components/Logout'
+import { UserLogOutNav } from './Navigation/UserLogOutNav'
+import { UserLoginNav } from './Navigation/UserLoginNav'
+import Notes from './Components/Notes.js'
 import ParticlesBg from 'particles-bg'
 function App() {
 	const [loginToken, setLoginToken] = useState(
@@ -22,12 +23,12 @@ function App() {
 			{loginToken ? (
 				<>
 					<ParticlesBg type='lines' bg={true} />
-					<Redirect to='/loginview' />
+					<Redirect to='/loginnav' />
 				</>
 			) : (
 				<>
 					<ParticlesBg type='lines' bg={true} />
-					<Redirect to='/logoutView' />
+					<Redirect to='/logoutnav' />
 				</>
 			)}
 			{/* All the routes in the app are here */}
@@ -66,13 +67,24 @@ function App() {
 			/>
 			<Route
 				exact
+				path='/notes'
+				render={(props) =>
+					loginToken ? (
+						<Notes loginToken={loginToken} />
+					) : (
+						<Redirect to='/login' />
+					)
+				}
+			/>
+			<Route
+				exact
 				path='/logout'
 				render={(props) => (
 					<Logout loginToken={loginToken} setLoginToken={setLoginToken} />
 				)}
 			/>
-			<Route exact path='/loginview' render={(props) => <UserLoginView />} />
-			<Route exact path='/logoutview' render={(props) => <UserLogOutView />} />
+			<Route exact path='/loginnav' render={(props) => <UserLoginNav />} />
+			<Route exact path='/logoutnav' render={(props) => <UserLogOutNav />} />
 			<br />
 			<hr />
 		</Router>

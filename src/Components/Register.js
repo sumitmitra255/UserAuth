@@ -3,8 +3,8 @@ import { useFormik } from 'formik'
 import { Button, TextField } from '@material-ui/core'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import { validationSchema } from './validationSchema'
-import { UserLogOutView } from './UserLogOutView'
+import { validationSchema } from '../Schemas/validationSchema'
+import { UserLogOutNav } from '../Navigation/UserLogOutNav'
 import swal from 'sweetalert'
 const Register = (props) => {
 	const { setRegitrationStatus } = props
@@ -44,7 +44,7 @@ const Register = (props) => {
 
 	return (
 		<>
-			<UserLogOutView />
+			<UserLogOutNav />
 			<div class='Login-container'>
 				{registered ? (
 					<Redirect to='/login' />

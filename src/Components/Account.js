@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { BrowserRouter as Redirect } from 'react-router-dom'
-import { UserLoginView } from './UserLoginView'
+import { UserLoginNav } from '../Navigation/UserLoginNav'
 import swal from 'sweetalert'
 export const Account = (props) => {
 	const { loginToken } = props
@@ -28,7 +28,7 @@ export const Account = (props) => {
 	}, [])
 	return (
 		<>
-			<UserLoginView />
+			<UserLoginNav />
 			<br />
 			<hr />
 			<div class='Login-container'>

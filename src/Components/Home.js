@@ -1,5 +1,5 @@
-import { UserLogOutView } from './UserLogOutView'
-import { UserLoginView } from './UserLoginView'
+import { UserLogOutNav } from '../Navigation/UserLogOutNav'
+import { UserLoginNav } from '../Navigation/UserLoginNav'
 
 export const Home = (props) => {
 	const { loginToken } = props
@@ -7,12 +7,12 @@ export const Home = (props) => {
 		<>
 			{loginToken ? (
 				<>
-					<UserLoginView />
+					<UserLoginNav />
 					<hr /> <h1 class='navbar'>You Have loggedin.</h1>{' '}
 				</>
 			) : (
 				<>
-					<UserLogOutView />
+					<UserLogOutNav />
 					<hr /> <h1 class='navbar'>You Have LoggedOut</h1>
 				</>
 			)}

@@ -2,10 +2,10 @@ import React from 'react'
 import { useFormik } from 'formik'
 import { Button, TextField } from '@material-ui/core'
 import axios from 'axios'
-import { validationSchema } from './validationSchema'
-import { UserLogOutView } from './UserLogOutView'
+import { validationSchema } from '../Schemas/validationSchema'
+import { UserLogOutNav } from '../Navigation/UserLogOutNav'
 import swal from 'sweetalert'
-import './App.css'
+import '../App.css'
 const Login = (props) => {
 	const { setLoginToken, regitrationStatus } = props
 
@@ -38,7 +38,7 @@ const Login = (props) => {
 
 	return (
 		<>
-			<UserLogOutView />
+			<UserLogOutNav />
 			<div class='Login-container'>
 				{regitrationStatus ? (
 					<h1>
