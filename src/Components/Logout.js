@@ -4,7 +4,7 @@ export const Logout = (props) => {
 	const { loginToken, setLoginToken } = props
 	useEffect(() => {
 		axios
-			.delete('http://dct-user-auth.herokuapp.com/users/logout', {
+			.delete('https://dct-user-auth.herokuapp.com/users/logout', {
 				headers: { 'x-auth': loginToken.token },
 			})
 			.then((response) => {
