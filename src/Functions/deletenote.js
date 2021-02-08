@@ -10,7 +10,7 @@ export const deletenote = (delnote, loginToken, displayNotes, setDisplayNotes) =
 	).then((value) => {
 		if (value) {
 			axios
-				.delete(`http://dct-user-auth.herokuapp.com/api/notes/${delnote._id}`, {
+				.delete(`https://dct-user-auth.herokuapp.com/api/notes/${delnote._id}`, {
 					headers: { 'x-auth': loginToken.token },
 				})
 				.then((response) => {
