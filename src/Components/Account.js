@@ -8,7 +8,7 @@ export const Account = (props) => {
 	const [details, setDetails] = useState({})
 	useEffect(() => {
 		axios
-			.get('http://dct-user-auth.herokuapp.com/users/account', {
+			.get('https://dct-user-auth.herokuapp.com/users/account', {
 				headers: { 'x-auth': loginToken.token },
 			})
 			.then((response) => {
