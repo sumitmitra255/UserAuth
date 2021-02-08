@@ -18,7 +18,7 @@ const Register = (props) => {
 		validationSchema: validationSchema,
 		onSubmit: (values) => {
 			axios
-				.post('http://dct-user-auth.herokuapp.com/users/register', values)
+				.post('https://dct-user-auth.herokuapp.com/users/register', values)
 				.then((response) => {
 					if (response.data._id) {
 						swal(
