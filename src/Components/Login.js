@@ -17,7 +17,7 @@ const Login = (props) => {
 		validationSchema: validationSchema,
 		onSubmit: (values) => {
 			axios
-				.post('http://dct-user-auth.herokuapp.com/users/login', values)
+				.post('https://dct-user-auth.herokuapp.com/users/login', values)
 				.then((response) => {
 					if (response.data.token) {
 						setLoginToken(response.data)
