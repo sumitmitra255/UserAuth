@@ -3,7 +3,7 @@ import swal from 'sweetalert';
 
 export const fetchNoteDetails = (noteid, loginToken) => {
 	axios
-		.get(`http://dct-user-auth.herokuapp.com/api/notes/${noteid}`, {
+		.get(`https://dct-user-auth.herokuapp.com/api/notes/${noteid}`, {
 			headers: { 'x-auth': loginToken.token },
 		})
 		.then((response) => {
