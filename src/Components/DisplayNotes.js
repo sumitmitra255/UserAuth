@@ -11,7 +11,7 @@ export const DisplayNotes = (props) => {
 
 	useEffect(() => {
 		axios
-			.get('http://dct-user-auth.herokuapp.com/api/notes', {
+			.get('https://dct-user-auth.herokuapp.com/api/notes', {
 				headers: { 'x-auth': loginToken.token },
 			})
 			.then((response) => {
