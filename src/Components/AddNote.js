@@ -14,7 +14,7 @@ export const AddNote = (props) => {
 		validationSchema: notesvalidationSchema,
 		onSubmit: (values) => {
 			axios
-				.post('http://dct-user-auth.herokuapp.com/api/notes', values, {
+				.post('https://dct-user-auth.herokuapp.com/api/notes', values, {
 					headers: { 'x-auth': loginToken.token },
 				})
 				.then((response) => {
